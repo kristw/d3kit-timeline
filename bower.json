@@ -1,0 +1,27 @@
+{
+  "name": "d3kit-timeline",
+  "homepage": "https://github.com/kristw/d3kit-timeline",
+  "authors": [
+    "Krist Wongsuphasawat <krist.wongz@gmail.com>"
+  ],
+  "description": "A timeline component based on d3kit and labella.js",
+  "main": "dist/d3kit-timeline.min.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "anonymizer",
+    "anonymize"
+  ],
+  "license": "Apache 2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
