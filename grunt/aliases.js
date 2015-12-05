@@ -5,9 +5,16 @@ module.exports = {
       // Clean output directory
       'clean:dist',
       'copy:dist',
-      // - minify the packaged javascript
-      'uglify:dist'
+      // Minify the packaged javascript
+      'uglify:dist',
+      // Copy to examples
+      'copy:examples',
     ]
+  },
+
+  'default': {
+    description: 'Watch for changes and trigger builds.',
+    tasks: ['build', 'connect:livereload', 'watch']
   },
 
   'publish:patch': {

@@ -11,7 +11,7 @@ module.exports = {
     options: {
       open: true,
       base: [
-        '<%= yeoman.app %>'
+        '<%= yeoman.examples %>'
       ]
     }
   }

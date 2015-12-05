@@ -1,0 +1,15 @@
+.bowerrc
+.DS_Store
+bower.json
+src
+coverage
+node_modules
+bower_components
+karma.conf.js
+Gruntfile.js
+grunt/*.js
+test
+tmp
+*.sublime-project
+examples
+docs

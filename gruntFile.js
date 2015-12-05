@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         src:  'src',
         test: 'test',
         dist: 'dist',
-        projectName: 'd3kit-timeline',
+        examples: 'examples',
         outputName: 'd3kit-timeline'
       };
       return config;
