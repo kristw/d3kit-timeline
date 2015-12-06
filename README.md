@@ -1,6 +1,6 @@
 **Introduction** |
 [Demo](http://kristw.github.io/d3kit-timeline) |
-[API Reference](docs/api)
+[API Reference](docs/api.md)
 
 # d3Kit-timeline
 
