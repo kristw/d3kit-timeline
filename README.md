@@ -1,3 +1,7 @@
+**Introduction** | 
+[Demo](http://kristw.github.io/d3kit-timeline) |
+[API Reference](docs/api)
+
 # d3Kit-timeline
 
 If you want to have a simple timeline that labels do not overlap, but too lazy to implement one from scratch, this library is for you. Below is a screenshot of four timelines of the same data, each can be created via ~10 lines of code. [See demo.](http://kristw.github.io/d3kit-timeline)
@@ -26,7 +30,7 @@ bower install d3kit-timeline --save
 
 If you have this dataset
 
-```
+```javascript
 var data = [
   {time: new Date(1977, 4,25), episode: 4, name: 'A New Hope'},
   {time: new Date(1980, 4,17), episode: 5, name: 'The Empire Strikes Back'},
@@ -40,7 +44,7 @@ var data = [
 
 Here is how to create a timeline with labels on the right.
 
-```
+```javascript
 var chart = new d3Kit.timeline('#timeline', {
   direction: 'right',
   initialWidth: 400,
@@ -53,7 +57,7 @@ var chart = new d3Kit.timeline('#timeline', {
 chart.data(data);
 ```
 
-For more detailed usage please refer to the API Reference.
+For more detailed usage please refer to the [API Reference](docs/api).
 
 ### Import to your project
 
@@ -72,7 +76,7 @@ Adding this library via ```<script>``` tag is the simplest way. By doing this, `
 
 If you use requirejs, this library support AMD out of the box.
 
-```
+```javascript
 require.config({
   paths: {
     d3:    'path/to/d3',
@@ -81,22 +85,23 @@ require.config({
     'd3kit-timeline': 'path/to/d3kit-timeline'
   }
 });
-require(['d3kit-timeline'], function(d3KitTimeline) {
-  // do something
+require(['d3kit-timeline'], function(d3Kit) {
+  // do something with d3Kit.timeline
 });
 ```
 
-Note: If you use this method, this library will not be attached to the d3Kit object and cannot be referenced by d3Kit.timeline.
+This module will be available as ```d3Kit.timeline```.
 
 ##### Choice 3: node.js / browserify
 
 d3kit-timeline also supports usage in commonjs style.
 
-```
-var d3KitTimeline = require('path/to/d3kit-timeline');
+```javascript
+var d3Kit = require('d3kit-timeline');
+// do something with d3Kit.timeline
 ```
 
-Note: If you use this method, this library will not be attached to the d3Kit object and cannot be referenced by d3Kit.timeline.
+This module will be available as ```d3Kit.timeline```.
 
 ### Author
 
