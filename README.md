@@ -1,4 +1,4 @@
-**Introduction** | 
+**Introduction** |
 [Demo](http://kristw.github.io/d3kit-timeline) |
 [API Reference](docs/api)
 
@@ -45,7 +45,7 @@ var data = [
 Here is how to create a timeline with labels on the right.
 
 ```javascript
-var chart = new d3Kit.timeline('#timeline', {
+var chart = new d3Kit.Timeline('#timeline', {
   direction: 'right',
   initialWidth: 400,
   initialHeight: 250,
@@ -63,7 +63,7 @@ For more detailed usage please refer to the [API Reference](docs/api).
 
 ##### Choice 1. Global
 
-Adding this library via ```<script>``` tag is the simplest way. By doing this, ```d3Kit.timeline``` is available in the global scope.
+Adding this library via ```<script>``` tag is the simplest way. By doing this, ```d3Kit.Timeline``` is available in the global scope.
 
 ```
 <script src="bower_components/d3/d3.min.js"></script>
@@ -86,11 +86,11 @@ require.config({
   }
 });
 require(['d3kit-timeline'], function(d3Kit) {
-  // do something with d3Kit.timeline
+  // do something with d3Kit.Timeline
 });
 ```
 
-This module will be available as ```d3Kit.timeline```.
+This module will be available as ```d3Kit.Timeline```.
 
 ##### Choice 3: node.js / browserify
 
@@ -98,10 +98,10 @@ d3kit-timeline also supports usage in commonjs style.
 
 ```javascript
 var d3Kit = require('d3kit-timeline');
-// do something with d3Kit.timeline
+// do something with d3Kit.Timeline
 ```
 
-This module will be available as ```d3Kit.timeline```.
+This module will be available as ```d3Kit.Timeline```.
 
 ### Author
 

@@ -58,7 +58,7 @@ function (d3, d3Kit, labella) {
     'labelMouseout'
   ];
 
-  d3Kit.timeline = d3Kit.factory.createChart(DEFAULT_OPTIONS, CUSTOM_EVENTS,
+  d3Kit.Timeline = d3Kit.factory.createChart(DEFAULT_OPTIONS, CUSTOM_EVENTS,
   function constructor(skeleton){
     // alias
     var options = skeleton.options();
