@@ -1,8 +1,8 @@
 # d3Kit-timeline
 
-"d3kit + labella.js = reusable timeline component"
+If you want to have a simple timeline that labels do not overlap, but too lazy to implement one from scratch, this library is for you. Below is a screenshot of four timelines of the same data, each can be created via ~10 lines of code. [See demo.](http://kristw.github.io/d3kit-timeline)
 
-If you want to have a timeline that labels do not overlap, but too lazy to implement one from scratch, this library is for you. Below is a screenshot of four different timelines, each can be created via ~10 lines of code. [See demo.](http://kristw.github.io/d3kit-timeline)
+This small library is built on top of [D3](http://d3js.org/), [d3Kit](https://github.com/twitter/d3kit) and [Labella.js](https://github.com/twitter/labella.js).
 
 <p align="center">
   <a href="http://kristw.github.io/d3kit-timeline/" style="width:100%;">
