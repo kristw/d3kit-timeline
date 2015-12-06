@@ -16,5 +16,7 @@
     "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "white": true
+    "white": true,
+    "validthis": true,
+    "predef": ["define"]
 }
