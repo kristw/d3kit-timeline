@@ -64,6 +64,7 @@
 </p>
 <p>
   A reusable timeline component built on top of
+  <a href="http://d3js.org/">D3</a>,
   <a href="https://github.com/twitter/d3kit">d3Kit</a>
   and
   <a href="https://github.com/twitter/labella.js">Labella.js</a>
@@ -98,7 +99,7 @@ var data = [
   {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
 ];
 
-var chart = new d3Kit.timeline('#timeline', {
+var chart = new d3Kit.Timeline('#timeline', {
   direction: 'right',
   initialWidth: 400,
   initialHeight: 250,
@@ -111,7 +112,7 @@ chart.data(data);
 
 //---------------------------------------------------
 
-var chart2 = new d3Kit.timeline('#timeline2', {
+var chart2 = new d3Kit.Timeline('#timeline2', {
   direction: 'left',
   initialWidth: 400,
   initialHeight: 250,
@@ -132,7 +133,7 @@ function color3(d){
   return colorScale(d.name);
 }
 
-var chart3 = new d3Kit.timeline('#timeline3', {
+var chart3 = new d3Kit.Timeline('#timeline3', {
   direction: 'down',
   initialWidth: 804,
   initialHeight: 160,
@@ -154,7 +155,7 @@ function color4(d){
   return colorScale(Math.ceil(d.episode/3));
 }
 
-var chart4 = new d3Kit.timeline('#timeline3', {
+var chart4 = new d3Kit.Timeline('#timeline3', {
   direction: 'up',
   initialWidth: 804,
   initialHeight: 160,
