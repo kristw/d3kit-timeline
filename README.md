@@ -57,7 +57,7 @@ var chart = new d3Kit.Timeline('#timeline', {
 chart.data(data);
 ```
 
-For more detailed usage please refer to the [API Reference](docs/api).
+For more detailed usage please refer to the [API Reference](docs/api.md).
 
 ### Import to your project
 
