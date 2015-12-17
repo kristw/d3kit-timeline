@@ -107,4 +107,5 @@ This module will be available as ```d3Kit.Timeline```.
 
 Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
-Copyright 2015. Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+Copyright 2015 Krist Wongsuphasawat. 
+Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
