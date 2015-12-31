@@ -32,6 +32,8 @@ function (d3, d3Kit, labella) {
     margin: {left: 40, right: 20, top: 20, bottom: 20},
     initialWidth: 400,
     initialHeight: 400,
+    scale: d3.time.scale(),
+    domain: undefined,
     direction: 'right',
     dotRadius: 3,
     layerGap: 60,
@@ -69,9 +71,7 @@ function (d3, d3Kit, labella) {
 
     var force = new labella.Force(options.labella);
 
-    var timeScale = d3.time.scale();
-    var axis = d3.svg.axis()
-      .scale(timeScale);
+    var axis = d3.svg.axis();
 
     function rectWidth(d){
       return d.w;
@@ -82,7 +82,7 @@ function (d3, d3Kit, labella) {
     }
 
     function timePos(d){
-      return timeScale(options.timeFn(d));
+      return options.scale(options.timeFn(d));
     }
 
     dispatch.on('resize',  visualize);
@@ -96,9 +96,15 @@ function (d3, d3Kit, labella) {
 
       var data = skeleton.data();
 
-      timeScale.domain(d3.extent(data, options.timeFn))
+      options.scale.domain(d3.extent(data, options.timeFn))
         .range([0, (options.direction==='left' || options.direction==='right') ? skeleton.getInnerHeight() : skeleton.getInnerWidth()])
         .nice();
+
+      if(options.domain){
+        options.scale.domain(options.domain);
+      }
+
+      axis.scale(options.scale);
 
       var axisTransform;
 

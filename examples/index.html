@@ -78,7 +78,7 @@
 <div class="timeline" id="timeline"></div>
 <div class="timeline" id="timeline2"></div><br>
 <div class="timeline" id="timeline3"></div><br>
-<div class="timeline" id="timeline4"></div>
+<div class="timeline" id="timeline4"></div><div class="timeline" id="timeline5"></div>
 
 <script src="bower_components/d3/d3.min.js"></script>
 <script src="bower_components/d3kit/dist/d3kit.min.js"></script>
@@ -171,6 +171,41 @@ var chart4 = new d3Kit.Timeline('#timeline3', {
   }
 });
 chart4.data(data);
+
+//---------------------------------------------------
+
+function color5(d){
+  return colorScale(d.team);
+}
+
+var chart5 = new d3Kit.Timeline('#timeline5', {
+  direction: 'up',
+  initialWidth: 804,
+  initialHeight: 120,
+  scale: d3.scale.linear(),
+  domain: [0,90],
+  margin: {left: 20, right: 20, top: 20, bottom: 30},
+  textFn: function(d){return d.name;},
+  layerGap: 40,
+  dotColor: color5,
+  labelBgColor: color5,
+  linkColor: color5,
+  labella: {
+    maxPos: 764,
+    algorithm: 'simple'
+  }
+});
+chart5.axis.tickFormat(function(d){return d+'\'';});
+chart5.data([
+  {time: 1,  name: 'MÜller',  team: 'GER'},
+  {time: 23, name: 'Klose',   team: 'GER'},
+  {time: 24, name: 'Kroos',   team: 'GER'},
+  {time: 26, name: 'Kroos',   team: 'GER'},
+  {time: 29, name: 'Khedira', team: 'GER'},
+  {time: 69, name: 'SchÜrrle', team: 'GER'},
+  {time: 79, name: 'SchÜrrle', team: 'GER'},
+  {time: 90, name: 'Oscar', team: 'BRA'},
+]);
 
 </script>
 
