@@ -6,6 +6,8 @@
 
 If you want to have a simple timeline that labels do not overlap, but too lazy to implement one from scratch, this library is for you. Below is a screenshot of four timelines of the same data, each can be created via ~10 lines of code. [See demo.](http://kristw.github.io/d3kit-timeline)
 
+The use case of this library is not limited to temporal data. You can change the scale to be d3.scale.linear() or something else to support x-value that is not time.
+
 This small library is built on top of [D3](http://d3js.org/), [d3Kit](https://github.com/twitter/d3kit) and [Labella.js](https://github.com/twitter/labella.js).
 
 <p align="center">
@@ -107,5 +109,5 @@ This module will be available as ```d3Kit.Timeline```.
 
 Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
-Copyright 2015 Krist Wongsuphasawat. 
+Copyright 2015 Krist Wongsuphasawat.
 Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
