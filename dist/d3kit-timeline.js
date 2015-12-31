@@ -96,13 +96,14 @@ function (d3, d3Kit, labella) {
 
       var data = skeleton.data();
 
-      options.scale.domain(d3.extent(data, options.timeFn))
-        .range([0, (options.direction==='left' || options.direction==='right') ? skeleton.getInnerHeight() : skeleton.getInnerWidth()])
-        .nice();
-
       if(options.domain){
         options.scale.domain(options.domain);
       }
+      else{
+        options.scale.domain(d3.extent(data, options.timeFn))
+          .nice();
+      }
+      options.scale.range([0, (options.direction==='left' || options.direction==='right') ? skeleton.getInnerHeight() : skeleton.getInnerWidth()]);
 
       axis.scale(options.scale);
 

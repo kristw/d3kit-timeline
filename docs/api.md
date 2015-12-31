@@ -13,6 +13,8 @@ There are many options that you can customize. These are often set when creating
 | margin  | {left: 40, right: 20, top: 20, bottom: 20} | margin for the chart area (more like a padding) |
 | initialWidth | 400 | chart width including margin |
 | initialHeight | 400 | chart height including margin |
+| scale | d3.time.scale() | Can specify other type of scale e.g. ```d3.scale.linear``` | 
+| domain | undefined | If set, will set domain of the scale to this value. Otherwise, the domain will be calculated from the extent of data. |
 | direction | 'right' | location of the labels relative to the axis |
 | keyFn | undefined | identifier function for each data point. ```function(d,i){return ...;}```| 
 | timeFn | return ```d.time```; | accessor function for time of each data point. ```function(d,i){return ...;}```|
