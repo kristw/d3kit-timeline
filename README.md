@@ -65,7 +65,7 @@ For more detailed usage please refer to the [API Reference](docs/api.md).
 
 Adding this library via ```<script>``` tag is the simplest way. By doing this, ```d3Kit.Timeline``` is available in the global scope.
 
-```
+```html
 <script src="bower_components/d3/d3.min.js"></script>
 <script src="bower_components/d3kit/dist/d3kit.min.js"></script>
 <script src="bower_components/labella/dist/labella.min.js"></script>
@@ -107,4 +107,5 @@ This module will be available as ```d3Kit.Timeline```.
 
 Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
-Copyright 2015. Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+Copyright 2015 Krist Wongsuphasawat. 
+Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
