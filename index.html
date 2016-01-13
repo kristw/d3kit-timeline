@@ -75,11 +75,19 @@
   <a href="https://github.com/kristw/d3kit-timeline">github</a> page.
 </p>
 
-<div class="timeline" id="timeline"></div>
-<div class="timeline" id="timeline2"></div><br>
-<div class="timeline" id="timeline3"></div><br>
-<div class="timeline" id="timeline4"></div><br>
-<div class="timeline" id="timeline5"></div>
+<div>
+  <div class="timeline" id="timeline"></div>
+  <div class="timeline" id="timeline2"></div>
+</div>
+<div>
+  <div class="timeline" id="timeline3"></div>
+</div>
+<div>
+  <div class="timeline" id="timeline4"></div>
+</div>
+<div>
+  <div class="timeline" id="timeline5"></div>
+</div>
 
 <script src="bower_components/d3/d3.min.js"></script>
 <script src="bower_components/d3kit/dist/d3kit.min.js"></script>
@@ -156,7 +164,7 @@ function color4(d){
   return colorScale(Math.ceil(d.episode/3));
 }
 
-var chart4 = new d3Kit.Timeline('#timeline3', {
+var chart4 = new d3Kit.Timeline('#timeline4', {
   direction: 'up',
   initialWidth: 804,
   initialHeight: 160,
