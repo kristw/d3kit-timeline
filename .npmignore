@@ -6,7 +6,7 @@ coverage
 node_modules
 bower_components
 karma.conf.js
-Gruntfile.js
+gruntFile.js
 grunt/*.js
 test
 tmp

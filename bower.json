@@ -25,7 +25,7 @@
     "src",
     "examples",
     "docs",
-    "Gruntfile.js",
+    "gruntFile.js",
     "grunt/*.js",
     "package.json"
   ],
