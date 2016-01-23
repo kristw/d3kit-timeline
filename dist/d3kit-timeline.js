@@ -157,10 +157,9 @@ function (d3, d3Kit, labella) {
 
       force.options(options.labella)
         .nodes(nodes)
-        .on('end', function(){
-          drawLabels(force.nodes());
-        })
-        .start(100);
+        .compute();
+
+      drawLabels(force.nodes());
     }
 
     function drawDots(data){
