@@ -2,7 +2,7 @@
 [Demo](http://kristw.github.io/d3kit-timeline) |
 [API Reference](docs/api.md)
 
-# d3Kit-timeline
+# d3Kit-timeline [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 If you want to have a simple timeline that labels do not overlap, but too lazy to implement one from scratch, this library is for you. Below is a screenshot of four timelines of the same data, each can be created via ~10 lines of code. [See demo.](http://kristw.github.io/d3kit-timeline)
 
@@ -111,3 +111,8 @@ Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
 Copyright 2015 Krist Wongsuphasawat.
 Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+[npm-image]: https://badge.fury.io/js/d3kit-timeline.svg
+[npm-url]: https://npmjs.org/package/d3kit-timeline
+[daviddm-image]: https://david-dm.org/kristw/d3kit-timeline.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/kristw/d3kit-timeline
