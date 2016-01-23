@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "d3kit": "~1.0.9",
-    "labella": "~0.1.1"
+    "labella": "~1.0.0"
   },
   "devDependencies": {
     "chai": "*",
