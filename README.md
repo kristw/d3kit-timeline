@@ -16,6 +16,8 @@ This small library is built on top of [D3](http://d3js.org/), [d3Kit](https://gi
   </a>
 </p>
 
+Note: If you are upgrading from v0.x.x to v1.x.x, this library now return the constructor `d3KitTimeline` instead of `d3Kit`. Please see the [change logs](CHANGELOG.md) for more detail.
+
 ### Install
 
 ```
