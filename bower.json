@@ -31,6 +31,6 @@
   ],
   "dependencies": {
     "d3kit": "~1.0.9",
-    "labella": "~1.0.0"
+    "labella": "~1.1.1"
   }
 }

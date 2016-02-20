@@ -2,9 +2,9 @@
 [Demo](http://kristw.github.io/d3kit-timeline) |
 **API Reference**
 
-## d3Kit.Timeline
+## d3KitTimeline
 
-<a name="constructor" href="#constructor">#</a> var chart = new **d3Kit.Timeline**([options:Object]);
+<a name="constructor" href="#constructor">#</a> var chart = new **d3KitTimeline**([options:Object]);
 
 There are many options that you can customize. These are often set when creating the chart but also can be changed later via ```chart.options(options)```
 
@@ -13,14 +13,14 @@ There are many options that you can customize. These are often set when creating
 | margin  | {left: 40, right: 20, top: 20, bottom: 20} | margin for the chart area (more like a padding) |
 | initialWidth | 400 | chart width including margin |
 | initialHeight | 400 | chart height including margin |
-| scale | d3.time.scale() | Can specify other type of scale e.g. ```d3.scale.linear``` | 
+| scale | d3.time.scale() | Can specify other type of scale e.g. ```d3.scale.linear``` |
 | domain | undefined | If set, will set domain of the scale to this value. Otherwise, the domain will be calculated from the extent of data. |
 | direction | 'right' | location of the labels relative to the axis |
-| keyFn | undefined | identifier function for each data point. ```function(d,i){return ...;}```| 
+| keyFn | undefined | identifier function for each data point. ```function(d,i){return ...;}```|
 | timeFn | return ```d.time```; | accessor function for time of each data point. ```function(d,i){return ...;}```|
 | textFn | return ```d.text```; | accessor function for text of each data point. ```function(d,i){return ...;}```|
-| labella | ```{}``` | options for Labella.js layout. See [Labella.js](https://github.com/twitter/labella.js/blob/master/docs/Force.md#constructor) documentation for more details. For example, to set maxixum position for the labels to 500, set this option to ```{maxPos: 500}``` | 
-| layerGap | 60 | distance from axis to the first layer of labels and between each layer of labels (in situations where all labels cannot fit within one layer) | 
+| labella | ```{}``` | options for Labella.js layout. See [Labella.js](https://github.com/twitter/labella.js/blob/master/docs/Force.md#constructor) documentation for more details. For example, to set maxixum position for the labels to 500, set this option to ```{maxPos: 500}``` |
+| layerGap | 60 | distance from axis to the first layer of labels and between each layer of labels (in situations where all labels cannot fit within one layer) |
 | dotRadius | 3 | radius of the dots. It can be a Number or Function ```function(d,i){return ...;}``` |
 | dotColor | #222 | color of the dots. It can be a color value or Function ```function(d,i){return ...;}``` |
 | labelBgColor | #222 | color of the label background. It can be a color value or Function ```function(d,i){return ...;}``` |

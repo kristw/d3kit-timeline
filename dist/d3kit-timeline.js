@@ -19,7 +19,7 @@
   else {
     // No AMD. Set module as a global variable
     // EDIT: Pass dependencies to factory function
-    root.d3Kit = factory(root.d3, root.d3Kit, root.labella);
+    root.d3KitTimeline = factory(root.d3, root.d3Kit, root.labella);
   }
 }(this,
 //EDIT: The dependencies are passed to this function
@@ -60,7 +60,7 @@ function (d3, d3Kit, labella) {
     'labelMouseout'
   ];
 
-  d3Kit.Timeline = d3Kit.factory.createChart(DEFAULT_OPTIONS, CUSTOM_EVENTS,
+  return d3Kit.factory.createChart(DEFAULT_OPTIONS, CUSTOM_EVENTS,
   function constructor(skeleton){
     // alias
     var options = skeleton.options();
@@ -304,8 +304,6 @@ function (d3, d3Kit, labella) {
       visualize: visualize
     });
   });
-
-  return d3Kit;
 
   //---------------------------------------------------
   // END code for this module

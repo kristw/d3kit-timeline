@@ -1,5 +1,40 @@
 # d3Kit-timeline
 
+## v1.x.x
+
+### v1.0.0
+
+Instead of exporting `d3Kit` and using the constructor via `d3Kit.Timeline`, this library now return the chart constructor itself.
+
+#### Breaking changes
+
+If you import via the `<script>` tag
+
+```diff
+- new d3Kit.Timeline()
++ new d3KitTimeline()
+```
+
+If you import via AMD
+
+```diff
+- define(['d3kit-timeline'], function(d3Kit)){ ... }
++ define(['d3kit-timeline'], function(d3KitTimeline)){ ... }
+```
+
+If you import via CommonJS style
+
+```diff
+- var d3Kit = require('d3kit-timeline');
++ var d3KitTimeline = require('d3kit-timeline');
+```
+
+#### Minor
+
+- Update labella version in the dependencies.
+
+## v0.x.x
+
 ### v0.4.1
 - Support Labella 1.x.x that changes API.
 

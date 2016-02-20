@@ -99,7 +99,7 @@ var data = [
   {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
 ];
 
-var chart = new d3Kit.Timeline('#timeline', {
+var chart = new d3KitTimeline('#timeline', {
   direction: 'right',
   initialWidth: 400,
   initialHeight: 250,
@@ -112,7 +112,7 @@ chart.data(data);
 
 //---------------------------------------------------
 
-var chart2 = new d3Kit.Timeline('#timeline2', {
+var chart2 = new d3KitTimeline('#timeline2', {
   direction: 'left',
   initialWidth: 400,
   initialHeight: 250,
@@ -133,7 +133,7 @@ function color3(d){
   return colorScale(d.name);
 }
 
-var chart3 = new d3Kit.Timeline('#timeline3', {
+var chart3 = new d3KitTimeline('#timeline3', {
   direction: 'down',
   initialWidth: 804,
   initialHeight: 160,
@@ -155,7 +155,7 @@ function color4(d){
   return colorScale(Math.ceil(d.episode/3));
 }
 
-var chart4 = new d3Kit.Timeline('#timeline3', {
+var chart4 = new d3KitTimeline('#timeline3', {
   direction: 'up',
   initialWidth: 804,
   initialHeight: 160,
@@ -178,7 +178,7 @@ function color5(d){
   return colorScale(d.team);
 }
 
-var chart5 = new d3Kit.Timeline('#timeline5', {
+var chart5 = new d3KitTimeline('#timeline5', {
   direction: 'up',
   initialWidth: 804,
   initialHeight: 120,
