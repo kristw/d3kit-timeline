@@ -2,6 +2,10 @@
 
 ## v1.x.x
 
+### v1.0.1
+
+Update dependency
+
 ### v1.0.0
 
 Instead of exporting `d3Kit` and using the constructor via `d3Kit.Timeline`, this library now return the chart constructor itself.

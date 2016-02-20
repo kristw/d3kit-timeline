@@ -14,7 +14,7 @@
     "dist/*.js"
   ],
   "dependencies": {
-    "d3kit": "~1.0.9",
+    "d3kit": "~1.0.10",
     "labella": "~1.1.1"
   },
   "devDependencies": {
