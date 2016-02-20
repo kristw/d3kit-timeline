@@ -13,7 +13,7 @@ API Reference ▸
 > "Labels should be beautiful."
 
 If you try to place labels for points on a timeline (or any 1D space), one common problem is the labels often overlap.
-How about making the labels push each other and find where they can stay with overlapping.
+How about making the labels push each other and find where they can stay with overlapping?
 
 * Play with [interactive demo](http://twitter.github.io/labella.js/) to learn more
 * See examples: [up](http://twitter.github.io/labella.js/basic_up.html) |
@@ -90,6 +90,13 @@ Labella.js also supports usage in commonjs style.
 ```javascript
 var labella = require('path/to/labella');
 ```
+
+### Files
+
+The *dist* directory contains four variations of this library:
+
+- *labella.js* and *labella.min.js* : Core functionalities. This is what you will need for regular use.
+- *labella-extra.js* and *labella-extra.min.js* (since v1.1.0) : Same content with the above bundle plus `labella.util` and `labella.metrics`, which are special modules for demo/evaluation.
 
 ### Author
 
