@@ -1,6 +1,6 @@
 {
   "name": "d3kit-timeline",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A timeline component based on d3kit and labella.js",
   "homepage": "https://github.com/kristw/d3kit-timeline",
   "main": "dist/d3kit-timeline.min.js",
