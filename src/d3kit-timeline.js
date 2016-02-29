@@ -160,6 +160,8 @@ function (d3, d3Kit, labella) {
         .compute();
 
       drawLabels(force.nodes());
+
+      return skeleton;
     }
 
     function drawDots(data){
@@ -299,9 +301,35 @@ function (d3, d3Kit, labella) {
       paths.exit().remove();
     }
 
+    function resizeToFit(){
+      var max;
+
+      switch(options.direction){
+        case 'up':
+          max = d3.max(force.nodes(), function(d){return Math.abs(d.y);}) || 0;
+          skeleton.height(max + options.margin.top + options.margin.bottom);
+          break;
+        case 'down':
+          max = d3.max(force.nodes(), function(d){return Math.abs(d.y + d.dy);}) || 0;
+          skeleton.height(max + options.margin.top + options.margin.bottom);
+          break;
+        case 'left':
+          max = d3.max(force.nodes(), function(d){return Math.abs(d.x);}) || 0;
+          skeleton.width(max + options.margin.left + options.margin.right);
+          break;
+        case 'right':
+          max = d3.max(force.nodes(), function(d){return Math.abs(d.x + d.dx);}) || 0;
+          skeleton.width(max + options.margin.left + options.margin.right);
+          break;
+      }
+
+      return skeleton;
+    }
+
     return skeleton.mixin({
       axis: axis,
-      visualize: visualize
+      visualize: visualize,
+      resizeToFit: resizeToFit
     });
   });
 
