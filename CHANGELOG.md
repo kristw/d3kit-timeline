@@ -2,6 +2,12 @@
 
 ## v1.x.x
 
+### v1.1.0
+
+#### New API
+
+Add `.resizeToFit()` to address issue [#5](https://github.com/kristw/d3kit-timeline/issues/5). If the direction is *left* or *right*, it will set the width automatically. If the direction is *up* or *down*, it will set the height automatically.
+
 ### v1.0.1
 
 Update dependency

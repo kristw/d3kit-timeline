@@ -58,7 +58,7 @@ var chart = new d3KitTimeline('#timeline', {
   }
 });
 
-chart.data(data);
+chart.data(data).resizeToFit();
 ```
 
 For more detailed usage please refer to the [API Reference](docs/api.md).
