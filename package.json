@@ -20,7 +20,6 @@
   "devDependencies": {
     "chai": "*",
     "grunt": "~0.4.5",
-    "grunt-bump": "~0.3.1",
     "grunt-cli": "~0.1.13",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-connect": "~0.5.0",
@@ -28,7 +27,6 @@
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-gh-pages": "~0.10.0",
-    "grunt-shell": "~1.1.2",
     "load-grunt-config": "~0.17.1",
     "mocha": "*",
     "pkgfiles": "^2.3.0",
@@ -37,6 +35,10 @@
   },
   "scripts": {
     "test": "mocha --no-colors --reporter spec",
-    "prepublish": "pkgfiles"
+    "build": "grunt build",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "pkgfiles",
+    "prepublish": "git push ; git push --tags"
   }
 }
