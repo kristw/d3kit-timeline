@@ -2,6 +2,10 @@
 
 ## v1.x.x
 
+### v1.1.1
+
+Update dependency (d3kit)
+
 ### v1.1.0
 
 #### New API
