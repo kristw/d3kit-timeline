@@ -57,6 +57,8 @@ function (d3, d3Kit, labella) {
     'labelClick',
     'labelMouseover',
     'labelMousemove',
+    'labelMouseenter',
+    'labelMouseleave',
     'labelMouseout'
   ];
 
@@ -244,6 +246,12 @@ function (d3, d3Kit, labella) {
         })
         .on('mousemove', function(d, i){
           dispatch.labelMousemove(d.data, i);
+        })
+        .on('mouseenter', function(d, i){
+          dispatch.labelMouseenter(d.data, i);
+        })
+        .on('mouseleave', function(d, i){
+          dispatch.labelMouseleave(d.data, i);
         })
         .on('mouseout', function(d, i){
           dispatch.labelMouseout(d.data, i);
