@@ -2,6 +2,10 @@
 
 ## v1.x.x
 
+### v1.2.0
+
+Support `mouseenter` and `mouseleave` events. Thanks to this [pull request](https://github.com/kristw/d3kit-timeline/pull/8).
+
 ### v1.1.1
 
 Update dependency (d3kit)

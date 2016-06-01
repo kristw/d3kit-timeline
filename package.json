@@ -14,8 +14,8 @@
     "dist/*.js"
   ],
   "dependencies": {
-    "d3kit": "~1.0.11",
-    "labella": "~1.1.1"
+    "d3kit": "~1.1.0",
+    "labella": "~1.1.2"
   },
   "devDependencies": {
     "chai": "*",

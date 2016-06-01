@@ -63,6 +63,8 @@ These events are included with d3Kit-timeline. The handler function signature is
 | 'labelMouseover' | Move cursor into a label |
 | 'labelMousemove' | Move cursor within a label |
 | 'labelMouseout' | Move cursor out of a label |
+| 'labelMouseenter' | Move cursor within a label |
+| 'labelMouseleave' | Move cursor out of a label |
 
 <a name="resizeToFit" href="#resizeToFit">#</a> chart.**resizeToFit**()
 
