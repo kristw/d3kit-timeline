@@ -94,9 +94,7 @@ function (d3, d3Kit, labella) {
     layers.get('main.axis').classed('axis', true);
 
     function visualize(){
-      if(!skeleton.hasData()) return;
-
-      var data = skeleton.data();
+      var data = skeleton.data() || [];
 
       if(options.domain){
         options.scale.domain(options.domain);
