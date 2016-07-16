@@ -1,12 +1,11 @@
 {
   "name": "d3kit",
-  "version": "1.0.9",
   "authors": [
     "Krist Wongsuphasawat <kristw@twitter.com>",
     "Robert Harris <rharris@twitter.com>"
   ],
   "description": "A set of tools to speed D3 develompment.",
-  "main": "dist/d3kit.js",
+  "main": "dist/d3kit.min.js",
   "moduleType": [
     "amd"
   ],
@@ -29,7 +28,7 @@
     "tests"
   ],
   "dependencies": {
-    "d3": "~3.4.11"
+    "d3": "~3.5.16"
   },
   "devDependencies": {
     "chai": "~1.9.1"

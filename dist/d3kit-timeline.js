@@ -57,6 +57,8 @@ function (d3, d3Kit, labella) {
     'labelClick',
     'labelMouseover',
     'labelMousemove',
+    'labelMouseenter',
+    'labelMouseleave',
     'labelMouseout'
   ];
 
@@ -136,11 +138,20 @@ function (d3, d3Kit, labella) {
 
       drawDots(data);
 
+      var labelTextStyle = d3Kit.helper.extend({}, options.textStyle);
+      Object.keys(labelTextStyle).forEach(function(key){
+        labelTextStyle[key] = d3.functor(labelTextStyle[key]);
+      });
+      // for backward compatibility
+      labelTextStyle.fill = labelTextStyle.fill || d3.functor(options.labelTextColor);
+
       var dummyText = layers.get('dummy').append('text')
         .classed('label-text', true);
 
       var nodes = data.map(function(d){
-        var bbox = dummyText.text(options.textFn(d))[0][0].getBBox();
+        var bbox = dummyText
+          .call(updateLabelText, labelTextStyle, d)[0][0]
+          .getBBox();
         var w = bbox.width + options.labelPadding.left + options.labelPadding.right;
         var h = bbox.height + options.labelPadding.top + options.labelPadding.bottom;
         var node = new labella.Node(
@@ -159,7 +170,7 @@ function (d3, d3Kit, labella) {
         .nodes(nodes)
         .compute();
 
-      drawLabels(force.nodes());
+      drawLabels(force.nodes(), labelTextStyle);
 
       return skeleton;
     }
@@ -196,7 +207,7 @@ function (d3, d3Kit, labella) {
       selection.exit().remove();
     }
 
-    function drawLabels(nodes){
+    function drawLabels(nodes, labelTextStyle){
       var nodeHeight;
       if(options.direction==='left' || options.direction==='right'){
         nodeHeight = d3.max(nodes, rectWidth);
@@ -227,7 +238,6 @@ function (d3, d3Kit, labella) {
       }
 
       var labelBgColor = d3.functor(options.labelBgColor);
-      var labelTextColor = d3.functor(options.labelTextColor);
       var linkColor = d3.functor(options.linkColor);
 
       // Draw label rectangles
@@ -245,6 +255,12 @@ function (d3, d3Kit, labella) {
         .on('mousemove', function(d, i){
           dispatch.labelMousemove(d.data, i);
         })
+        .on('mouseenter', function(d, i){
+          dispatch.labelMouseenter(d.data, i);
+        })
+        .on('mouseleave', function(d, i){
+          dispatch.labelMouseleave(d.data, i);
+        })
         .on('mouseout', function(d, i){
           dispatch.labelMouseout(d.data, i);
         })
@@ -261,11 +277,7 @@ function (d3, d3Kit, labella) {
 
       sEnter.append('text')
         .classed('label-text', true)
-        .attr('dy', options.textYOffset)
-        .attr('x', options.labelPadding.left)
-        .attr('y', options.labelPadding.top)
-        .style('fill', function(d){return labelTextColor(d.data);})
-        .text(function(d){return options.textFn(d.data);});
+        .call(updateLabelText, labelTextStyle, function(d){return d.data;});
 
       var sTrans = selection.transition()
         .attr('transform', nodePos);
@@ -276,11 +288,7 @@ function (d3, d3Kit, labella) {
         .style('fill', function(d){return labelBgColor(d.data);});
 
       sTrans.select('text.label-text')
-        .attr('dy', options.textYOffset)
-        .attr('x', options.labelPadding.left)
-        .attr('y', options.labelPadding.top)
-        .style('fill', function(d){return labelTextColor(d.data);})
-        .text(function(d){return options.textFn(d.data);});
+        .call(updateLabelText, labelTextStyle, function(d){return d.data;});
 
       selection.exit().remove();
 
@@ -299,6 +307,23 @@ function (d3, d3Kit, labella) {
         .attr('d', function(d){return renderer.generatePath(d);});
 
       paths.exit().remove();
+    }
+
+    function updateLabelText(selection, textStyle, accessor){
+      accessor = accessor ? d3.functor(accessor) : function(d){return d;};
+
+      selection
+        .text(function(d){return options.textFn(accessor(d));})
+        .attr('dy', options.textYOffset)
+        .attr('x', options.labelPadding.left)
+        .attr('y', options.labelPadding.top);
+
+      Object.keys(textStyle).forEach(function(key){
+        var styleFn = textStyle[key];
+        selection.style(key, function(d,i){return styleFn(accessor(d),i);});
+      });
+
+      return selection;
     }
 
     function resizeToFit(){
