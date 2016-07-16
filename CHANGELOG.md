@@ -2,6 +2,10 @@
 
 ## v1.x.x
 
+### v1.3.1
+
+Draw axis when there is no data. Previous behavior will not draw anything or update the vis at all.
+
 ### v1.3.0
 
 Support option `textStyle` for customizing label text style, per this enhancement request [#9](https://github.com/kristw/d3kit-timeline/issues/9).
