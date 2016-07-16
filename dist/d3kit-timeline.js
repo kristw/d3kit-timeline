@@ -320,7 +320,7 @@ function (d3, d3Kit, labella) {
 
       Object.keys(textStyle).forEach(function(key){
         var styleFn = textStyle[key];
-        selection.style(key, function(d){return styleFn(accessor(d));});
+        selection.style(key, function(d,i){return styleFn(accessor(d),i);});
       });
 
       return selection;

@@ -28,6 +28,17 @@ There are many options that you can customize. These are often set when creating
 | linkColor | #222 | color of the paths that link dots to labels. It can be a color value or Function ```function(d,i){return ...;}``` |
 | labelPadding | {left: 4, right: 4, top: 3, bottom: 2} | space to add around the text within each label |
 | textYOffset | 0.85em | vertical offset for text within label |
+| textStyle | null | style for label text. It must be an object with style field as key, the value can be constant or `function(d,i){ return ... }`. Any style field for svg `<text>` is applicable. See an example below |
+
+```javascript
+var options = {
+  textStyle: {
+    'fill': '#fff',
+    'text-decoration' : function(d){ return d.team==='BRA'? 'none': 'underline'},
+    'font-weight': function(d){ return d.team==='BRA'? 700: 400}
+  }
+};
+```
 
 ### Fields
 

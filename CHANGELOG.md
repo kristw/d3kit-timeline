@@ -2,6 +2,10 @@
 
 ## v1.x.x
 
+### v1.3.0
+
+Support option `textStyle` for customizing label text style, per this enhancement request [#9](https://github.com/kristw/d3kit-timeline/issues/9).
+
 ### v1.2.0
 
 Support `mouseenter` and `mouseleave` events. Thanks to this [pull request](https://github.com/kristw/d3kit-timeline/pull/8).
