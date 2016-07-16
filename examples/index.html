@@ -248,6 +248,41 @@ chart5.data(data2).resizeToFit();
 
 </script>
 
+<h2>With custom text style</h2>
+<div class="timeline" id="timeline6"></div>
+
+<script>
+
+function color6(d){
+  return colorScale(d.team);
+}
+
+var chart6 = new d3KitTimeline('#timeline6', {
+  direction: 'up',
+  initialWidth: 804,
+  scale: d3.scale.linear(),
+  domain: [0,90],
+  margin: {left: 20, right: 20, top: 20, bottom: 30},
+  textFn: function(d){return d.name;},
+  layerGap: 40,
+  dotColor: color6,
+  labelBgColor: color6,
+  linkColor: color6,
+  labella: {
+    maxPos: 764,
+    algorithm: 'simple'
+  },
+  textStyle: {
+    'fill': function(d){ return d.team==='BRA'? '#000': '#fff'},
+    'text-decoration' : function(d){ return d.team==='BRA'? 'none': 'underline'},
+    'font-weight': function(d){ return d.team==='BRA'? 700: 400}
+  }
+});
+chart6.axis.tickFormat(function(d){return d+'\'';});
+chart6.data(data2).resizeToFit();
+
+</script>
+
 <footer>
   Created by Krist Wongsuphasawat / <a href="https://twitter.com/kristw">@kristw</a>
   <br>
