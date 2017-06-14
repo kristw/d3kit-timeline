@@ -1,9 +1,3 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(factory());
-}(this, (function () { 'use strict';
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
 } : function (obj) {
@@ -334,6 +328,3 @@ function (d3, d3Kit, labella) {
   // END code for this module
   //---------------------------------------------------
 });
-
-})));
-//# sourceMappingURL=d3kit-timeline.js.map

@@ -30,10 +30,7 @@
     "package.json"
   ],
   "dependencies": {
-    "d3kit": "~1.1.0",
-    "labella": "~1.1.2"
-  },
-  "resolutions": {
-    "d3": "~3.5.16"
+    "d3kit": "~3.2.0",
+    "labella": "~1.1.4"
   }
 }
