@@ -106,7 +106,7 @@ var d3KitTimeline = require('d3kit-timeline');
 
 Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
-Copyright 2015 Krist Wongsuphasawat.
+Copyright 2015-2017 Krist Wongsuphasawat.
 Licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 [npm-image]: https://badge.fury.io/js/d3kit-timeline.svg

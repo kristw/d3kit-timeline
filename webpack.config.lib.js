@@ -44,6 +44,12 @@ const commonConfig = {
       commonjs: 'd3-selection',
       amd: 'd3-selection'
     },
+    'd3-transition': {
+      root: 'd3',
+      commonjs2: 'd3-transition',
+      commonjs: 'd3-transition',
+      amd: 'd3-transition'
+    },
     'd3-dispatch': {
       root: 'd3',
       commonjs2: 'd3-dispatch',
