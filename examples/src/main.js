@@ -57,7 +57,7 @@ var chart1x = new d3KitTimeline('#t1x', {
   textFn: function(d){
     return d.time.getFullYear() + ' - ' + d.name;
   }
-}).data(data).resizeToFit();
+}).data(data).updateDimensionNow().resizeToFit();
 
 var chart2x = new d3KitTimeline('#t2x', {
   direction: 'left',
@@ -70,7 +70,7 @@ var chart2x = new d3KitTimeline('#t2x', {
   linkColor: '#777'
 });
 chart2x.axis.ticks(0).tickSize(0);
-chart2x.data(data).resizeToFit();
+chart2x.data(data).updateDimensionNow().resizeToFit();
 
 function color3(d){
   return colorScale(d.name);
@@ -89,7 +89,7 @@ var chart3 = new d3KitTimeline('#timeline3', {
     maxPos: 800
   }
 });
-chart3.data(data).resizeToFit();
+chart3.data(data).updateDimensionNow().resizeToFit();
 
 //---------------------------------------------------
 
@@ -111,7 +111,7 @@ var chart4 = new d3KitTimeline('#timeline4', {
     algorithm: 'simple'
   }
 });
-chart4.data(data).resizeToFit();
+chart4.data(data).updateDimensionNow().resizeToFit();
 
 function color5(d){
   return colorScale(d.team);
@@ -134,7 +134,7 @@ var chart5 = new d3KitTimeline('#timeline5', {
   }
 });
 chart5.axis.tickFormat(function(d){return d+'\'';});
-chart5.data(data2).resizeToFit();
+chart5.data(data2).updateDimensionNow().resizeToFit();
 
 function color6(d){
   return colorScale(d.team);
@@ -162,5 +162,5 @@ var chart6 = new d3KitTimeline('#timeline6', {
   }
 });
 chart6.axis.tickFormat(function(d){return d+'\'';});
-chart6.data(data2).resizeToFit();
+chart6.data(data2).updateDimensionNow().resizeToFit();
 

@@ -352,10 +352,3 @@ class Timeline extends SvgChart {
 }
 
 export default Timeline;
-
-  //   function drawLabels(nodes, labelTextStyle){
-
-
-  //   }
-
-  // });
