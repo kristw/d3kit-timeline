@@ -1,6 +1,23 @@
 # d3Kit-timeline
 
-## v1.x.x
+## v2
+
+### v2.0.0
+
+#### Breaking changes
+
+- Accessing the axis via `chart.axis` is deprecated. Please set the `formatAxis` in options instead
+
+```diff
+- chart.axis.ticks(0)
++ chart.options({
++   formatAxis: axis => axis.ticks(0)
++ })
+```
+
+- Calling `.resizeToFit()` requires a call to `.visualize()` before it.
+
+## v1
 
 ### v1.3.1
 

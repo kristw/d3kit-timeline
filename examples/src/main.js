@@ -73,7 +73,7 @@ const chart2x = new d3KitTimeline('#t2x', {
 
 chart2x
   .data(data)
-  .updateDimensionNow()
+  .visualize()
   .resizeToFit();
 
 //---------------------------------------------------
@@ -97,7 +97,7 @@ const chart3 = new d3KitTimeline('#timeline3', {
 });
 chart3
   .data(data)
-  .updateDimensionNow()
+  .visualize()
   .resizeToFit();
 
 //---------------------------------------------------
@@ -122,7 +122,7 @@ const chart4 = new d3KitTimeline('#timeline4', {
 });
 chart4
   .data(data)
-  .updateDimensionNow()
+  .visualize()
   .resizeToFit();
 
 //---------------------------------------------------
@@ -150,7 +150,7 @@ const chart5 = new d3KitTimeline('#timeline5', {
 });
 chart5
   .data(data2)
-  .updateDimensionNow()
+  .visualize()
   .resizeToFit();
 
 //---------------------------------------------------
@@ -184,5 +184,5 @@ const chart6 = new d3KitTimeline('#timeline6', {
 
 chart6
   .data(data2)
-  .updateDimensionNow()
+  .visualize()
   .resizeToFit();

@@ -13,22 +13,23 @@ There are many options that you can customize. These are often set when creating
 | margin  | {left: 40, right: 20, top: 20, bottom: 20} | margin for the chart area (more like a padding) |
 | initialWidth | 400 | chart width including margin |
 | initialHeight | 400 | chart height including margin |
-| scale | d3.time.scale() | Can specify other type of scale e.g. ```d3.scale.linear``` |
+| scale | d3.scaleTime() | Can specify other type of scale e.g. `d3.scaleLinear()` |
 | domain | undefined | If set, will set domain of the scale to this value. Otherwise, the domain will be calculated from the extent of data. |
 | direction | 'right' | location of the labels relative to the axis |
-| keyFn | undefined | identifier function for each data point. ```function(d,i){return ...;}```|
-| timeFn | return ```d.time```; | accessor function for time of each data point. ```function(d,i){return ...;}```|
-| textFn | return ```d.text```; | accessor function for text of each data point. ```function(d,i){return ...;}```|
-| labella | ```{}``` | options for Labella.js layout. See [Labella.js](https://github.com/twitter/labella.js/blob/master/docs/Force.md#constructor) documentation for more details. For example, to set maxixum position for the labels to 500, set this option to ```{maxPos: 500}``` |
+| formatAxis | axis => axis | customize the axis before drawing, such as `axis => axis.ticks(0)` to hide all the ticks |
+| keyFn | undefined | identifier function for each data point. `(d, i) => ...`|
+| timeFn | `d => d.time` | accessor function for time of each data point. `(d, i) => ...`|
+| textFn | `d => d.text` | accessor function for text of each data point. `(d, i) => ...`|
+| labella | ```{}``` | options for Labella.js layout. See [Labella.js](https://github.com/twitter/labella.js/blob/master/docs/Force.md#constructor) documentation for more details. For example, to set maxixum position for the labels to 500, set this option to `{maxPos: 500}` |
 | layerGap | 60 | distance from axis to the first layer of labels and between each layer of labels (in situations where all labels cannot fit within one layer) |
-| dotRadius | 3 | radius of the dots. It can be a Number or Function ```function(d,i){return ...;}``` |
-| dotColor | #222 | color of the dots. It can be a color value or Function ```function(d,i){return ...;}``` |
-| labelBgColor | #222 | color of the label background. It can be a color value or Function ```function(d,i){return ...;}``` |
-| labelTextColor | #fff | color of the label text. It can be a color value or Function ```function(d,i){return ...;}``` |
-| linkColor | #222 | color of the paths that link dots to labels. It can be a color value or Function ```function(d,i){return ...;}``` |
+| dotRadius | 3 | radius of the dots. It can be a Number or Function `(d, i) => ...` |
+| dotColor | #222 | color of the dots. It can be a color value or Function `(d, i) => ...` |
+| labelBgColor | #222 | color of the label background. It can be a color value or Function `(d, i) => ...` |
+| labelTextColor | #fff | color of the label text. It can be a color value or Function `(d, i) => ...` |
+| linkColor | #222 | color of the paths that link dots to labels. It can be a color value or Function `(d, i) => ...` |
 | labelPadding | {left: 4, right: 4, top: 3, bottom: 2} | space to add around the text within each label |
 | textYOffset | 0.85em | vertical offset for text within label |
-| textStyle | null | style for label text. It must be an object with style field as key, the value can be constant or `function(d,i){ return ... }`. Any style field for svg `<text>` is applicable. See an example below |
+| textStyle | null | style for label text. It must be an object with style field as key, the value can be constant or `(d, i) => ...`. Any style field for svg `<text>` is applicable. See an example below |
 
 ```javascript
 var options = {
@@ -38,16 +39,6 @@ var options = {
     'font-weight': function(d){ return d.team==='BRA'? 700: 400}
   }
 };
-```
-
-### Fields
-
-<a name="axis" href="#axis">#</a> chart.**axis**
-
-An axis renderer for the timeline. See [d3.svg.axis](https://github.com/mbostock/d3/wiki/SVG-Axes) for full API reference. One common use case is to hide all the ticks.
-
-```javascript
-chart.axis.ticks(0).tickSize(0);
 ```
 
 ### Functions
@@ -82,3 +73,4 @@ These events are included with d3Kit-timeline. The handler function signature is
 <a name="resizeToFit" href="#resizeToFit">#</a> chart.**resizeToFit**()
 
 If the direction is *left* or *right*, it will set the width automatically. If the direction is *up* or *down*, it will set the height automatically.
+Must be called after `.updateDimensionNow()`
