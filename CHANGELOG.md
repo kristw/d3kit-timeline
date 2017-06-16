@@ -17,6 +17,8 @@
 
 - Calling `.resizeToFit()` requires a call to `.visualize()` before it.
 
+- Add `dotMouseenter` and `dotMouseleave` events.
+
 ## v1
 
 ### v1.3.1
