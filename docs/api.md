@@ -70,6 +70,8 @@ These events are included with d3Kit-timeline. The handler function signature is
 | 'dotMouseover' | Move cursor into a dot on the timeline |
 | 'dotMousemove' | Move cursor within a dot on the timeline |
 | 'dotMouseout' | Move cursor out of a dot on the timeline |
+| 'dotMouseenter' | Move cursor within a dot on the timeline |
+| 'dotMouseleave' | Move cursor out of a dot on the timeline |
 | 'labelClick' | Click on a label |
 | 'labelMouseover' | Move cursor into a label |
 | 'labelMousemove' | Move cursor within a label |

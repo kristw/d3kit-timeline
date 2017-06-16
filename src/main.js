@@ -19,6 +19,7 @@ class Timeline extends SvgChart {
       domain: undefined,
       direction: 'right',
       dotRadius: 3,
+      formatAxis: identity,
       layerGap: 60,
       labella: {},
       keyFn: undefined,
@@ -39,6 +40,8 @@ class Timeline extends SvgChart {
       'dotMouseover',
       'dotMousemove',
       'dotMouseout',
+      'dotMouseenter',
+      'dotMouseleave',
       'labelClick',
       'labelMouseover',
       'labelMousemove',
@@ -55,7 +58,6 @@ class Timeline extends SvgChart {
     this.layers.get('main/axis').classed('axis', true);
 
     this.force = new labella.Force(options.labella);
-    this.setupScale();
 
     this.updateLabelText = this.updateLabelText.bind(this);
     this.visualize = this.visualize.bind(this);
@@ -110,8 +112,9 @@ class Timeline extends SvgChart {
     return selection;
   }
 
-  setupScale() {
+  drawAxes() {
     const options = this.options();
+
     let axisTransform;
 
     switch(options.direction){
@@ -133,16 +136,14 @@ class Timeline extends SvgChart {
         break;
     }
 
-    this.axis.scale(options.scale);
     this.layers.get('main')
       .attr('transform', axisTransform);
 
-    return this;
-  }
+    const formatAxis = options.formatAxis || identity;
 
-  updateScale() {
-    this.layers.get('main/axis')
-      .call(this.axis);
+    formatAxis(this.axis.scale(options.scale));
+
+    this.layers.get('main/axis').call(this.axis);
 
     return this;
   }
@@ -159,15 +160,11 @@ class Timeline extends SvgChart {
     sUpdate.enter().append('circle')
       .classed('dot', true)
       .on('click', this.dispatchAs('dotClick'))
-      .on('mouseover', function(d, i){
-        dispatch.dotMouseover(d, i);
-      })
-      .on('mousemove', function(d, i){
-        dispatch.dotMousemove(d, i);
-      })
-      .on('mouseout', function(d, i){
-        dispatch.dotMouseout(d, i);
-      })
+      .on('mouseover', this.dispatchAs('dotMouseover'))
+      .on('mousemove', this.dispatchAs('dotMousemove'))
+      .on('mouseout', this.dispatchAs('dotMouseout'))
+      .on('mouseenter', this.dispatchAs('dotMouseenter'))
+      .on('mouseleave', this.dispatchAs('dotMouseleave'))
       .style('fill', options.dotColor)
       .attr('r', options.dotRadius)
       .attr(field, timePos);
@@ -222,24 +219,12 @@ class Timeline extends SvgChart {
 
     const sEnter = selection.enter().append('g')
       .classed('label-g', true)
-      .on('click', function(d, i){
-        dispatch.labelClick(d.data, i);
-      })
-      .on('mouseover', function(d, i){
-        dispatch.labelMouseover(d.data, i);
-      })
-      .on('mousemove', function(d, i){
-        dispatch.labelMousemove(d.data, i);
-      })
-      .on('mouseenter', function(d, i){
-        dispatch.labelMouseenter(d.data, i);
-      })
-      .on('mouseleave', function(d, i){
-        dispatch.labelMouseleave(d.data, i);
-      })
-      .on('mouseout', function(d, i){
-        dispatch.labelMouseout(d.data, i);
-      })
+      .on('click', this.dispatchAs('labelClick'))
+      .on('mouseover', this.dispatchAs('labelMouseover'))
+      .on('mousemove', this.dispatchAs('labelMousemove'))
+      .on('mouseenter', this.dispatchAs('labelMouseenter'))
+      .on('mouseleave', this.dispatchAs('labelMouseleave'))
+      .on('mouseout', this.dispatchAs('labelMouseout'))
       .attr('transform', nodePos);
 
     sEnter
@@ -307,10 +292,6 @@ class Timeline extends SvgChart {
       : this.getInnerWidth()]
     );
 
-    this.setupScale();
-    this.updateScale();
-    this.drawDots(data);
-
     const labelTextStyle = helper.extend({}, options.textStyle);
     Object.keys(labelTextStyle).forEach(key => {
       labelTextStyle[key] = helper.functor(labelTextStyle[key]);
@@ -345,6 +326,8 @@ class Timeline extends SvgChart {
       .nodes(nodes)
       .compute();
 
+    this.drawAxes();
+    this.drawDots(data);
     this.drawLabels(this.force.nodes(), labelTextStyle);
 
     return this;
