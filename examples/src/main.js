@@ -11,7 +11,7 @@ const data = [
   {time: new Date(1999, 4,19), episode: 1, name: 'The Phantom Menace'},
   {time: new Date(2002, 4,16), episode: 2, name: 'Attack of the Clones'},
   {time: new Date(2005, 4,19), episode: 3, name: 'Revenge of the Sith'},
-  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'}
 ];
 
 const data2 = [
@@ -22,7 +22,22 @@ const data2 = [
   {time: 29, name: 'Khedira', team: 'GER'},
   {time: 69, name: 'SchÜrrle', team: 'GER'},
   {time: 79, name: 'SchÜrrle', team: 'GER'},
-  {time: 90, name: 'Oscar', team: 'BRA'},
+  {time: 90, name: 'Oscar', team: 'BRA'}
+];
+
+const data3 = [
+  {time: new Date(1977, 4,25), episode: 4, name: 'A New Hope'},
+  {time: new Date(1980, 4,17), episode: 5, name: 'The Empire Strikes Back'},
+  {time: new Date(1984, 4,25), episode: 6, name: 'Return of the Jedi'},
+  {time: new Date(1999, 4,19), episode: 1, name: 'The Phantom Menace'},
+  {time: new Date(2002, 4,16), episode: 2, name: 'Attack of the Clones'},
+  {time: new Date(2005, 4,19), episode: 3, name: 'Revenge of the Sith'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'},
+  {time: new Date(2015,11,18), episode: 7, name: 'The Force Awakens'}
 ];
 
 const colorScale = scaleOrdinal(schemeCategory10);
@@ -186,3 +201,20 @@ chart6
   .data(data2)
   .visualize()
   .resizeToFit();
+
+const chart7 = new d3KitTimeline('#timeline7', {
+    direction: 'right',
+    initialWidth: 400,
+    initialHeight: 250,
+    textFn: d => [d.time.getFullYear(), d.name].join(' - '),
+  }).data(data3).visualize();
+
+
+//see how invoking without timeout does not solve defect
+chart7.resizeToFit();
+
+//now the magic will happen, ideally implementation should be bound
+//to redering done event.
+setTimeout(function(){
+  chart7.resizeToFit();
+}, 1000);

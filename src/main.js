@@ -63,33 +63,27 @@ class Timeline extends SvgChart {
     this.visualize = this.visualize.bind(this);
     this.on('data', this.visualize);
     this.on('options', this.visualize);
-    this.on('resize', this.visualize);
   }
 
+  /**
+   * Relying on inner height and width of *rendered* chart, assign width
+   * and height values to svg element and it's container.
+   *
+   * *NOTE* this method is best to be invoked after rendering happened,
+   * ie, wrapped in timeout function
+   *
+   **/
   resizeToFit(){
-    const options = this.options();
-    let maxVal;
-    const nodes = this.force.nodes();
+    //bbox of the inner group representing chart
+    var bbox = this.rootG._groups[0][0].getBBox();
 
-    switch(options.direction){
-      case 'up':
-        maxVal = max(nodes, d => Math.abs(d.y)) || 0;
-        this.height(maxVal + options.margin.top + options.margin.bottom);
-        break;
-      case 'down':
-        maxVal = max(nodes, d => Math.abs(d.y + d.dy)) || 0;
-        this.height(maxVal + options.margin.top + options.margin.bottom);
-        break;
-      case 'left':
-        maxVal = max(nodes, d => Math.abs(d.x)) || 0;
-        this.width(maxVal + options.margin.left + options.margin.right);
-        break;
-      case 'right':
-        maxVal = max(nodes, d => Math.abs(d.x + d.dx)) || 0;
-        this.width(maxVal + options.margin.left + options.margin.right);
-        break;
-    }
+    var height = Math.abs(bbox.height) + Math.abs(bbox.y)
+      + this.options().margin.top + this.options().margin.bottom;
+    var width = Math.abs(bbox.width) + Math.abs(bbox.x)
+      + this.options().margin.left + this.options().margin.right;
 
+    this.height(height);
+    this.width(width);
     return this;
   }
 
