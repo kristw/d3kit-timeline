@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "lazynerd-devtools": "^0.0.2",
+    "lazynerd-devtools": "^1.0.1",
     "pkgfiles": "^2.3.0"
   },
   "scripts": {

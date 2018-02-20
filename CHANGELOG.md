@@ -2,6 +2,9 @@
 
 ## v2
 
+### v2.0.1
+- Fix issue [#17](https://github.com/kristw/d3kit-timeline/issues/17) `TypeError: d3KitTimeline is not a constructor`.
+
 ### v2.0.0
 
 #### Breaking changes

@@ -10,6 +10,7 @@ const commonConfig = {
     filename: 'd3kit-timeline.min.js',
     sourceMapFilename: '[file].map',
     library: 'd3KitTimeline',
+    libraryExport: 'default',
     libraryTarget: 'umd',
     umdNamedDefine: false
   },
