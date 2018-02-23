@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Example - D3Kit-Timeline</title>
+    <style>
+       .axis path{
+         fill: none;
+         stroke-width: 2px;
+         stroke: #222;
+       }
+       .axis line{
+         fill: none;
+         stroke-width: 1px;
+         stroke: #222;
+       }
+       .axis text{
+         font-size: 10px;
+       }
+       path.link{
+         stroke-width: 2px;
+         opacity: 0.6;
+       }
+       text.label-text{
+         font-size: 12px;
+       }
+     </style>
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      
+</head>
+
+<body>
+  <div id="crisprtimeline"></div>
+  <!-- Use d3 v4 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3kit/3.2.0/d3kit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/labella/1.1.4/labella.min.js"></script>
+  <script src="https://cdn.rawgit.com/kristw/d3kit-timeline/master/dist/d3kit-timeline.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    console.log('hmm', d3KitTimeline);
+
+    var chart = new d3KitTimeline('#crisprtimeline', {
+      direction: 'right',
+      initialWidth: 600,
+      initialHeight: 600,
+      labelBgColor: "#777",
+      textFn: function(d){ return d.time.getFullYear() + ' - ' + d.title;}
+    });
+    chart.data(data);
+  </script>
+</body>
+
+</html>
